@@ -1,0 +1,24 @@
+﻿<Sidebar @ref="sidebar">
+    <SidebarContent>
+        <SidebarBrand>
+            <a href="#">Centiro CodeTest</a>
+        </SidebarBrand>
+        <SidebarNavigation>
+            <SidebarItem>
+                <SidebarLink To="/orders" Title="Orders">
+                    <Icon Name="IconName.Home" Margin="Margin.Is3.FromEnd" />Orders
+                </SidebarLink>
+            </SidebarItem>
+        </SidebarNavigation>
+    </SidebarContent>
+</Sidebar>
+@code{
+    Sidebar sidebar;
+    SidebarSubItem mailSidebarSubItems;
+    SidebarSubItem appsSidebarSubItems;
+
+    void ToggleSidebar()
+    {
+        sidebar.Toggle();
+    }
+}

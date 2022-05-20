@@ -1,0 +1,47 @@
+﻿@using System.Data
+@model DataSet
+@{
+    Layout = null;
+}
+ 
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Orders</title>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>OrderNumber</th>
+            <th>OrderLineNumber</th>
+            <th>ProductNumber</th>
+            <th>Quantity</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>ProductGroup</th>
+            <th>OrderDate</th>
+            <th>CustomerName</th>
+            <th>CustomerNumber</th>
+        </tr>
+        @foreach (DataRow row in Model.Tables[0].Rows)
+        {
+            <tr>
+                <td>@row["OrderNumber"]</td>
+                <td>@row["OrderLineNumber"]</td>
+                <td>@row["ProductNumber"]</td>
+                <td>@row["Quantity"]</td>
+                <td>@row["Name"]</td>
+                <td>@row["Description"]</td>
+                <td>@row["Price"]</td>
+                <td>@row["ProductGroup"]</td>
+                <td>@row["OrderDate"]</td>
+                <td>@row["CustomerName"]</td>
+                <td>@row["CustomerNumber"]</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

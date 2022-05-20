@@ -1,0 +1,38 @@
+﻿@using CentiroHomeAssignment.Shared.ResponseModels
+@page "/orders"
+@*DATAGRID HEADER SECTION*@
+
+
+<DataGrid     
+   TItem="OrderResponse"
+   Data="@OrderResponses"
+   Filterable
+   Responsive
+   ShowPager
+   PageSize="10"
+>
+
+   <DataGridColumns>  
+       
+       <DataGridCommandColumn TItem="OrderResponse" NewCommandAllowed="false" DeleteCommandAllowed="true" ClearFilterCommandAllowed="false" >
+          
+       </DataGridCommandColumn>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.OrderNumber)" Caption="Order Number" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.OrderLineNumber)" Caption="Order Line Number" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.ProductNumber)" Caption="Product Number" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.Quantity)" Caption="Quantity" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.Name)" Caption="Name" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.Description)" Caption="Description" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.Price)" Caption="Price" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.ProductGroup)" Caption="Product Group" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.OrderDate)" Caption="Order Date" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.CustomerName)" Caption="Customer Name" Sortable="true" Filterable="true" Editable/>
+           <DataGridColumn TItem="OrderResponse" Field="@nameof(OrderResponse.CustomerNumber)" Caption="Customer Number" Sortable="true" Filterable="true" Editable/>
+           
+        </DataGridColumns>
+     
+</DataGrid>
+       
+                
+
+

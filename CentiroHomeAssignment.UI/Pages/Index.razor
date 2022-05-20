@@ -1,0 +1,37 @@
+﻿@page "/"
+@using CentiroHomeAssignment.Shared.ResponseModels
+@using CentiroHomeAssignment.UI.Data
+
+<div>
+    <Button Type="ButtonType.Submit" Color="Color.Success"  Size="Size.ExtraSmall"@onclick="() => ImportOrders(Order1)">Import Order 1</Button>
+    <Button Type="ButtonType.Submit" Color="Color.Success"  Size="Size.ExtraSmall" @onclick="() => ImportOrders(Order2)">Import Order 2</Button>
+    <Button Type="ButtonType.Submit" Color="Color.Success"  Size="Size.ExtraSmall" @onclick="() => ImportOrders(Order3)">Import Order 3</Button>
+
+
+    
+    
+</div>
+
+
+@code{
+
+    [Inject]
+    public IOrderDataService OrderDataService { get; set; }
+
+    public List<OrderResponse> OrderResponses { get; set; }
+
+    public OrderResponse OrderResponse { get; set; }
+
+    private string Order1 { get; set; } = "App_Data/Order1.txt";
+
+    private string Order2{ get; set; } = "App_Data/Order2.txt";
+
+    private string Order3{ get; set; } = "App_Data/Order3.txt";
+
+     public async Task ImportOrders(string filePath)
+        {
+
+            await OrderDataService.ImportOrders(filePath);
+
+        }
+}
